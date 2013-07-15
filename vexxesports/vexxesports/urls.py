@@ -4,12 +4,18 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
+    #home page
     url(r'^$', 'maincontent.views.home', name='home'),
+
+    #section pages
+    url(r'^streams/', 'maincontent.views.streams', name='streams'),
+    url(r'^matches/', 'maincontent.views.matches', name='matches'),
+    url(r'^guides/', 'maincontent.views.guides', name='guides'),
+    url(r'^teams/', 'maincontent.views.teams', name='teams'),
+
     url(r'^login/', 'maincontent.views.login', name='login'),
 
-    # Uncomment the admin/doc line below to enable admin documentation:
-    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
+    #admin urls
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 )
