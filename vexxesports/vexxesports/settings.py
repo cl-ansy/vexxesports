@@ -1,4 +1,4 @@
-# Django settings for myproject project.
+# Django settings for vexxesports project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -21,7 +21,7 @@ DATABASES = {
 }
 
 #Indicate that custom created model is the user profile model for this site
-AUTH_PROFILE_MODULE = 'accounts.UserProfile'
+#AUTH_PROFILE_MODULE = 'maincontent.UserProfile'
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
