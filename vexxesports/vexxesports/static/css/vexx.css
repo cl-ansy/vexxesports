@@ -24,3 +24,21 @@ body
 {
   background: #777;
 }
+.navbar-text
+{
+  color: #333;
+}
+.dropdown-menu
+{
+  padding: 15px;
+  padding-bottom: 0;
+}
+.navbar .divider-vertical
+{
+  border-left: 1px solid #599400;
+  border-right: 1px solid #777;
+}
+.navbar .nav li.dropdown.open>.dropdown-toggle
+{
+  background: #427900;
+}
