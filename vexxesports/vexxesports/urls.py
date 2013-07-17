@@ -13,8 +13,6 @@ urlpatterns = patterns('',
     url(r'^guides/', 'maincontent.views.guides', name='guides'),
     url(r'^teams/', 'maincontent.views.teams', name='teams'),
 
-    url(r'^login/', 'maincontent.views.login', name='login'),
-
     #admin urls
     url(r'^admin/', include(admin.site.urls)),
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

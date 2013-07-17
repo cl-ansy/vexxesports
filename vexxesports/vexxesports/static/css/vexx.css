@@ -1,11 +1,26 @@
-html, body
+body
 {
-height: 100%;
-margin: 0;
+  padding-top: 40px;
+  background: #000;
 }
-
-.splash
+.navbar .brand
 {
-min-height: 100%;;
-background-image: url('/media/vexxsplash.png');
+  color: #333;
+  text-shadow: none;
+}
+.nav-collapse .nav>li>a
+{
+  color: #333;
+  text-shadow: none;
+}
+.navbar .navbar-inner
+{
+    background-image: none;
+    border-radius: 0;
+    background: #599400;
+    border: 0;
+}
+.navbar .btn-navbar
+{
+  background: #777;
 }
