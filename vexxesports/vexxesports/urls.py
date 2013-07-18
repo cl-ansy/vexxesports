@@ -11,7 +11,7 @@ urlpatterns = patterns('',
     url(r'^streams/', 'maincontent.views.streams', name='streams'),
     url(r'^matches/', 'maincontent.views.matches', name='matches'),
     url(r'^guides/', 'maincontent.views.guides', name='guides'),
-    url(r'^teams/', 'maincontent.views.teams', name='teams'),
+    url(r'^team/', 'maincontent.views.teams', name='teams'),
 
     #admin urls
     url(r'^admin/', include(admin.site.urls)),
