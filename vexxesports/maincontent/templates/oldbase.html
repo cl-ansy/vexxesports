@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <title>VexX eSports</title>
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}css/vexx.css">
+    <link rel="shortcut icon" href="{{MEDIA_URL}}vexxfavicon.ico">
+  </head>
+
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button><!-- .btn .btn-navbar -->
+          <a class="brand" href="/">VexX eSports</a>
+
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li><a href="/teams/">Teams</a></li>
+              <li><a href="/matches/">Matches</a></li>
+              <li><a href="/guides/">Guides</a></li>
+              <li><a href="/streams/">Streams</a></li>
+            </ul><!-- .nav -->
+            <ul class="nav pull-right">
+
+{% if user.is_anonymous %}
+<li class="dropdown">
+  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Login<b class="caret"></b></a>
+  <div class="dropdown-menu">
+  <form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    <p class="navbar-text"><label for="id_username">Username:</label> <input id="id_username" type="text" name="username" maxlength="30" /></p>
+    <p class="navbar-text"><label for="id_password">Password:</label> <input id="id_password" type="password" name="password" /></p>
+    <input type="submit" value="Log in" />
+    <input type="hidden" name="next" value="#" />
+    </form>
+  </div><!-- .dropdown-menu -->
+</li><!-- .dropdown -->
+<li class="divider-vertical"></li>
+<li class="navbar-text">Register</li>
+{% else %}
+<p class="navbar-text">
+Welcome, {{user.username}}.
+</p>
+{% endif %}
+
+            </ul><!-- .nav -->
+          </div><!-- .nav-collapse .collapse -->
+        </div><!-- .container -->
+      </div><!-- .navbar-inner -->
+    </div><!-- .navbar -->
+  <div class="container">
+    {% block content %}
+    {% endblock content %}
+  </div><!-- .container -->
+
+  <script src="{{STATIC_URL}}js/jquery-1.10.2.min.js"></script>
+  <script src="{{STATIC_URL}}js/bootstrap.min.js"></script>
+
+  </body>
+
+</html>
